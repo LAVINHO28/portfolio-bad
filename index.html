@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patxi Lavigne | Engineering Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #0066ff;
+            --text-main: #0f172a;
+            --text-sub: #334155;
+            --bg: #ffffff;
+            scroll-padding-top: 120px;
+        }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+        .tech-font { font-family: 'JetBrains Mono', monospace; }
+        
+        .bento-card { 
+            background: #ffffff; 
+            border: 1px solid #cbd5e1;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover { 
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.08);
+        }
+
+        /* Timeline Style */
+        .timeline-container { position: relative; width: 100%; }
+        .timeline-line { position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: #cbd5e1; }
+        .timeline-dot {
+            position: absolute;
+            left: 17px;
+            width: 16px;
+            height: 16px;
+            background: var(--accent);
+            border: 4px solid #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.15);
+        }
+
+        .image-slot {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #f8fafc;
+            border: 1px dashed #94a3b8;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .image-slot img { width: 100%; height: 100%; object-fit: cover; }
+
+        .nav-link { font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; color: var(--text-main); text-transform: uppercase; }
+        .nav-link:hover { color: var(--accent); }
+        .active-nav { color: var(--accent); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal { animation: fadeIn 0.8s ease forwards; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVIGATION (6 EXPLICIT SECTIONS) -->
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <span class="tech-font font-bold text-xl tracking-tighter text-slate-900">Patxi LAVIGNE</span>
+            <div class="hidden md:flex space-x-10">
+                <a href="#welcome" class="nav-link">Welcome</a>
+                <a href="#engineering" class="nav-link">Engineering</a>
+                <a href="#mobility" class="nav-link">Mobility</a>
+                <a href="#engagement" class="nav-link">Engagement</a>
+                <a href="#activities" class="nav-link">Activities</a>
+                <a href="#career" class="nav-link active-nav">Career</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-8">
+
+        <!-- 1. WELCOME SECTION WITH PHOTO -->
+        <section id="welcome" class="min-h-screen flex flex-col md:flex-row items-center gap-16 pt-20 mb-20 reveal">
+            <div class="flex-1">
+                <h1 class="text-7xl md:text-9xl font-extrabold tracking-tight text-slate-900 leading-[0.9] mb-8">
+                    Patxi <br><span class="text-blue-600">LAVIGNE</span>
+                </h1>
+                <p class="text-3xl text-slate-700 font-semibold max-w-2xl mb-6">
+                    3EA Engineering Student at <br>
+                    <span class="text-slate-900">ENSEEIHT Toulouse (31)</span>
+                </p>
+                <p class="text-lg text-slate-700 font-medium max-w-xl leading-relaxed">
+                    Passionate about embedded systems, instrumentation, and automation
+                </p>
+            </div>
+            
+            <!-- Photo Frame Displayed Here -->
+            <div class="w-full md:w-[400px]">
+                <div class="relative bg-slate-100 rounded-[40px] overflow-hidden border-8 border-white shadow-2xl aspect-[4/5]">
+                    <img src="photo_patxi.jpg" alt="Patxi Lavigne" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ENGINEERING SECTION -->
+        <section id="engineering" class="mb-40 reveal">
+            <div class="flex items-center gap-6 mb-16">
+                <h2 class="tech-font text-blue-600 text-sm font-bold uppercase tracking-[0.4em]">// Engineering</h2>
+                <div class="h-[1px] flex-1 bg-slate-200"></div>
+            </div>
+
+            <!-- SKILLS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+                <div class="bento-card p-10 md:col-span-2">
+                    <h3 class="tech-font text-xs font-bold text-slate-800 uppercase mb-8 tracking-widest">Technical_Core</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <p class="text-xs font-bold text-blue-600 mb-4 uppercase">Instrumentation</p>
+                            <p class="text-lg text-slate-800 leading-relaxed font-medium">Measurement chains, sensor implementation, GUM uncertainty analysis, calibration protocols.</p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-blue-600 mb-4 uppercase">Digital Tools</p>
+                            <p class="text-lg text-slate-800 tech-font font-medium">Python, MATLAB, LabVIEW, Arduino, Fusion 360, Creo, Optimu, Power Automate.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-card p-10 bg-slate-50 border-slate-200">
+                    <h3 class="tech-font text-xs font-bold text-slate-800 uppercase mb-8 tracking-widest">Soft_Skills</h3>
+                    <ul class="space-y-4 font-bold uppercase text-sm tracking-tighter text-slate-900">
+                        <li class="flex justify-between"><span>Teamwork</span> <span class="text-blue-600">01</span></li>
+                        <li class="flex justify-between"><span>Project Management</span> <span class="text-blue-600">02</span></li>
+                        <li class="flex justify-between"><span>Creativity</span> <span class="text-blue-600">03</span></li>
+                        <li class="flex justify-between"><span>Problem Solving</span> <span class="text-blue-600">04</span></li>
+                        <li class="flex justify-between"><span>Adaptability</span> <span class="text-blue-600">05</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROJECTS WITH PHOTO SLOTS -->
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="group">
+                    <div class="image-slot mb-6">
+                        <img src="nexteam_project.jpg" alt="Nexteam Internship">
+                    </div>
+                    <h3 class="text-3xl font-extrabold mb-3 uppercase italic text-slate-900">Metrology & Digital Tracking</h3>
+                    <p class="tech-font text-xs text-blue-600 mb-4 font-bold uppercase">Nexteam Machining, Escout (64)</p>
+                    <p class="text-lg text-slate-700 leading-relaxed font-medium">
+                        Management of a park of 3,000+ measurement instruments. Implementation of Power Automate tools to optimize quality tracking and operational precision.
+                    </p>
+                </div>
+
+                <div class="group">
+                    <div class="image-slot mb-6">
+                        <img src="aime_cleanroom.jpg" alt="AIME Project">
+                    </div>
+                    <h3 class="text-3xl font-extrabold mb-3 uppercase italic text-slate-900">Silicon PV Cells Fabrication</h3>
+                    <p class="tech-font text-xs text-blue-600 mb-4 font-bold uppercase">AIME Plateforme, Toulouse (31)</p>
+                    <p class="text-lg text-slate-700 leading-relaxed font-medium">
+                        ISO 6/7 Cleanroom environment. Full manufacturing cycle of PV cells including photolithography, doping, and oxidation processes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACADEMIC PATH (FULL WIDTH TIMELINE) -->
+        <section class="mb-40 reveal">
+            <h2 class="tech-font text-blue-600 text-sm font-bold uppercase tracking-[0.4em] mb-20 text-center">// Academic_Path</h2>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- 1. ENSEEIHT -->
+                <div class="relative mb-20">
+                    <div class="timeline-dot"></div>
+                    <div class="ml-16 bento-card p-8">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-3xl font-extrabold uppercase text-slate-900">ENSEEIHT (INP Toulouse)</h4>
+                                <p class="tech-font text-blue-600 font-bold text-lg mt-1">1st Year M.Eng. in Electrical & Automation (3EA)</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="tech-font font-bold text-slate-900">2026 – 2028</span>
+                                <p class="text-xs text-slate-600 font-bold uppercase tracking-widest mt-1">Toulouse (31)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. BUT -->
+                <div class="relative mb-20">
+                    <div class="timeline-dot"></div>
+                    <div class="ml-16 bento-card p-8">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-3xl font-extrabold uppercase text-slate-900">Bachelor in Applied Physics & Instrumentation</h4>
+                                <p class="text-xs text-slate-600 font-semibold italic">(BUT Mesures Physiques)</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="tech-font font-bold text-slate-900">2024 – 2026</span>
+                                <p class="text-xs text-slate-600 font-bold uppercase tracking-widest mt-1">IUT Toulouse (31)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. INSA -->
+                <div class="relative mb-20">
+                    <div class="timeline-dot"></div>
+                    <div class="ml-16 bento-card p-8">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-3xl font-extrabold uppercase text-slate-800">INSA Toulouse</h4>
+                                <p class="tech-font text-slate-700 font-bold text-lg mt-1">Integrated Preparatory Cycle</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="tech-font font-bold text-slate-800">2023 – 2024</span>
+                                <p class="text-xs text-slate-600 font-bold uppercase tracking-widest mt-1">Toulouse (31)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. LYCEE -->
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <div class="ml-16 bento-card p-8">
+                        <div class="flex justify-between items-start">
+                            <div class="max-w-2xl">
+                                <h4 class="text-3xl font-extrabold uppercase text-slate-800">Saint-Joseph Private High School</h4>
+                                <p class="text-lg text-slate-800 font-medium mt-2">
+                                    French Scientific Baccalaureate • European Section (Spanish) • <span class="text-blue-600 font-bold italic">Graduated with Highest Honors</span>
+                                </p>
+                                <p class="text-sm text-slate-700 font-medium tech-font mt-2 leading-relaxed">
+                                    Specializations: Mathematics, Life & Earth Sciences, Physics-Chemistry, and Expert Mathematics.
+                                </p>
+                            </div>
+                            <div class="text-right">
+                                <span class="tech-font font-bold text-slate-800">Graduated 2023</span>
+                                <p class="text-xs text-slate-600 font-bold uppercase tracking-widest mt-1">Oloron Sainte-Marie (64)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. MOBILITY & LANGUAGES -->
+        <section id="mobility" class="mb-40 reveal">
+            <div class="flex items-center gap-6 mb-16">
+                <h2 class="tech-font text-blue-600 text-sm font-bold uppercase tracking-[0.4em]">// Mobility</h2>
+                <div class="h-[1px] flex-1 bg-slate-200"></div>
+            </div>
+            
+            <div class="bento-card p-12 space-y-12">
+                <!-- Languages Subsection -->
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-6 flex items-center gap-3">
+                        <span class="text-blue-600">🌐</span> Languages
+                    </h3>
+                    <ul class="space-y-3 text-lg text-slate-700 font-medium">
+                        <li>• <strong class="text-slate-900">English:</strong> Professional proficiency — Ready for international mobility.</li>
+                        <li>• <strong class="text-slate-900">Spanish:</strong> Practiced since elementary school — Fluent for academic and cultural immersion.</li>
+                        <li>• <strong class="text-slate-900">Mandarin Chinese:</strong> Beginner level — Active introductory learning.</li>
+                    </ul>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- Mobility Plans Subsection -->
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-6 flex items-center gap-3">
+                        <span class="text-blue-600">✈️</span> Mobility Plans
+                    </h3>
+                    <p class="text-lg text-slate-700 font-medium leading-relaxed mb-6">
+                        My goal is to complete a semester or an academic exchange abroad to combine high-level technical expertise with deep cultural and linguistic immersion. I am particularly drawn to two distinct horizons that reflect both my technological ambitions and my personal background.
+                    </p>
+                    <p class="text-lg text-slate-700 font-medium leading-relaxed mb-6">
+                        <strong class="text-slate-900">Target Destinations:</strong> 
+                        On one hand, <strong class="text-slate-900">China</strong> appeals to me for its scale, its ultra-dynamic technological ecosystem, and its pioneering innovations in automated systems and smart infrastructures. On the other hand, destinations like <strong class="text-slate-900">Argentina</strong> or <strong class="text-slate-900">Mexico</strong> represent the ideal opportunity to fully immerse myself in a rich, vibrant culture and leverage the Spanish practice I've maintained since elementary school.
+                    </p>
+                    <p class="text-lg text-slate-700 font-medium leading-relaxed">
+                        This experience would allow me not only to acquire advanced engineering competencies in a different environment, but also to grow through unique human and cultural discoveries.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ENGAGEMENT -->
+        <section id="engagement" class="mb-40 reveal">
+            <div class="flex items-center gap-6 mb-16">
+                <h2 class="tech-font text-blue-600 text-sm font-bold uppercase tracking-[0.4em]">// Engagement</h2>
+                <div class="h-[1px] flex-1 bg-slate-200"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Card 1: Food Bank -->
+                <div class="bento-card p-12 border-t-4 border-t-blue-600">
+                    <h4 class="text-2xl font-extrabold text-slate-900 mt-4 uppercase italic">Food Bank Volunteer</h4>
+                    <p class="text-slate-700 font-medium mt-3 leading-relaxed">
+                        <strong class="text-slate-900">Banque Alimentaire (2020–2023):</strong> Food collection and solidarity drives in Oloron Sainte-Marie (64).
+                    </p>
+                </div>
+                <!-- Card 2: Disability Support -->
+                <div class="bento-card p-12 border-t-4 border-t-blue-600">
+                    <h4 class="text-2xl font-extrabold text-slate-900 mt-4 uppercase italic">Hospitalité Basco-Béarnaise</h4>
+                    <p class="text-slate-700 font-medium mt-3 leading-relaxed">
+                        <strong class="text-slate-900">Lourdes (2023):</strong> One-week support and assistance for individuals with disabilities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ACTIVITIES -->
+        <section id="activities" class="mb-40 reveal">
+            <div class="flex items-center gap-6 mb-16">
+                <h2 class="tech-font text-blue-600 text-sm font-bold uppercase tracking-[0.4em]">// Activities</h2>
+                <div class="h-[1px] flex-1 bg-slate-200"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Card 1: Sports & Endurance -->
+                <div class="bento-card p-10">
+                    <h3 class="tech-font text-xs font-bold text-slate-800 uppercase mb-6 tracking-widest">Sports & Passions</h3>
+                    <ul class="space-y-4 font-bold uppercase text-sm tracking-tighter text-slate-900">
+                        <li class="flex justify-between items-center py-2 border-b border-slate-100"><span>Swimming</span> <span class="text-blue-600 text-lg">🏊‍♂️</span></li>
+                        <li class="flex justify-between items-center py-2"><span>Football (7 years in a club)</span> <span class="text-blue-600 text-lg">⚽</span></li>
+                    </ul>
+                </div>
+                <!-- Card 2: Gaming & Culture -->
+                <div class="bento-card p-10 bg-slate-50 border-slate-200">
+                    <h3 class="tech-font text-xs font-bold text-slate-800 uppercase mb-6 tracking-widest">Mind & Culture</h3>
+                    <ul class="space-y-4 font-bold uppercase text-sm tracking-tighter text-slate-900">
+                        <li class="flex justify-between items-center py-2 border-b border-slate-200"><span>Video Games (Exploration, Competition, RPGs)</span> <span class="text-blue-600 text-lg">🎮</span></li>
+                        <li class="flex justify-between items-center py-2"><span>Reading (19th-Century Literature)</span> <span class="text-blue-600 text-lg">📚</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CAREER -->
+        <section id="career" class="pb-40 reveal text-center">
+            <div class="flex items-center gap-6 mb-16">
+                <h2 class="tech-font text-blue-600 text-sm font-bold uppercase tracking-[0.4em]">// Career</h2>
+                <div class="h-[1px] flex-1 bg-slate-200"></div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8 mb-24">
+                <a href="CV_Patxi_Lavigne_EN.pdf" class="px-10 py-5 bento-card text-xs font-black uppercase tracking-widest text-slate-900 hover:bg-slate-900 hover:text-white transition-all">Resume_English</a>
+                <a href="CV_Patxi_Lavigne_FR.pdf" class="px-10 py-5 bento-card text-xs font-black uppercase tracking-widest text-slate-900 hover:bg-slate-900 hover:text-white transition-all">CV_Français</a>
+                <a href="https://www.linkedin.com/in/patxi-lavigne-4205082ab" target="_blank" class="px-10 py-5 bg-blue-600 text-white rounded-full text-xs font-black uppercase tracking-widest hover:scale-105 transition-all shadow-xl shadow-blue-500/20">LinkedIn Profile</a>
+            </div>
+            
+            <!-- PITCH VIDEO -->
+            <div class="max-w-4xl mx-auto rounded-[50px] overflow-hidden bg-slate-50 p-20 border border-slate-200">
+                <h3 class="tech-font text-xs font-bold text-slate-800 uppercase mb-8">Elevator_Pitch_v1.0</h3>
+                <div class="image-slot flex items-center justify-center bg-white border-2 border-dashed border-slate-300">
+                    <p class="text-xs tech-font text-slate-500 tracking-[0.4em] uppercase font-bold">Video_Stream_Offline</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-20 border-t border-slate-200 text-slate-600 font-bold text-xs tech-font uppercase tracking-[0.6em]">
+        Patxi Lavigne / ENSEEIHT 3EA / Toulouse (31)
+    </footer>
+
+</body>
+</html>
